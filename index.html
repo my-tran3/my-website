@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🐈 Home of English 🐈</title>
+
+      <!-- Định dạng bên trong của web -->
+    <style>
+        body {
+            background-color: #afb0b2;
+        }
+
+        header {
+            background-color: #333; /* Màu nền header */
+            color: white; /* Màu chữ header */
+            padding: 8px 0; /* Đệm header */
+            overflow: hidden; /* Giữ nội dung không bị tràn khi sử dụng float */
+        .right-header {
+            float: right; /* Căn header về bên phải */
+            padding: 0 10px; /* Đệm trái phải cho tiêu đề bên phải */
+        }
+        .header-img {
+            height: 100px; /* Chiều cao hình ảnh */
+        }
+        .header-img-left {
+            width: 100px; /* Chiều rộng cụ thể cho hình bên trái */
+        }
+        .header-img-right {
+            width: 100px; /* Chiều rộng cụ thể cho hình bên phải */
+        }
+        .blue-txt {
+            color: rgb(2, 41, 234);
+        }
+        .red-txt {
+            color: red;
+       }
+       .main-title {
+            text-align: center; /* Căn giữa cho các thẻ h1 cụ thể */
+       }
+       .link-color {
+            color: blue;
+       }
+       main {
+        display: flex;
+    }
+        .left-column, .right-column {
+        flex: 1;  /* Các cột bên trái và phải nhỏ hơn */
+        padding: 20px; /* Thêm đệm cho nội dung */
+    }
+        .center-column {
+        flex: 2;  /* Cột giữa lớn hơn */
+        padding: 20px; /* Thêm đệm cho nội dung */
+    }
+        nav {
+        display: inline-block; /* Hiển thị navigation bên cạnh các phần khác */
+        padding: 0 15px; /* Đệm trái phải cho navigation */
+    }
+        nav ul {
+        list-style: none; /* Loại bỏ ký hiệu đầu dòng */
+        padding: 0;
+        margin: 0;
+    }
+        nav ul li {
+        display: inline; /* Hiển thị các mục điều hướng ngang hàng */
+        margin-right: 10px; /* Khoảng cách giữa các mục điều hướng */
+    }
+        nav ul li a {
+        color: white; /* Màu chữ của liên kết điều hướng */
+        text-decoration: none; /* Loại bỏ gạch chân */
+    }
+    .header-img-center {
+        position: relative;
+        width: 1500px;
+        height: auto;
+        max-width: 100%;
+        display: block;
+        margin: 20px auto;
+        z-index: 2;  /* Places image above background */
+    }
+
+    .header-container {
+        position: relative;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .background-shape {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1600px;  /* Slightly larger than the image */
+        height: 400px;  /* Adjust based on your needs */
+        background-color: #f0f0f0; /* Light gray background */
+        border-radius: 20px;  /* Rounded corners */
+        z-index: 1;
+    }
+
+    @media screen and (max-width: 768px) {
+        .background-shape {
+            width: 300px;
+        }
+        .header-img-center {
+            width: 250px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Header section containing logo and navigation -->
+    <header class="main-header">                              <!-- Main header container -->
+        <div class="header-container">
+            <div class="background-shape"></div>
+            <div class="center-header">
+                <img src="hoe.png"
+                     alt="Main Logo" 
+                     class="header-img header-img-center">
+            </div>
+        </div>
+        <nav class="main-nav">                               <!-- Navigation menu container -->
+            <ul class="nav-list">                            <!-- Unordered list for nav items -->
+                <li><a href="#home">Home</a></li>            <!-- Navigation links -->
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content section -->
+    <main>                                                   <!-- Main content container -->
+        <article class="main-content">                       <!-- Article container -->
+            <h1 class="red-txt main-title">                  <!-- Main heading with red text -->
+                Welcome to HOME OF ENGLISH
+            </h1>
+            <img src="hoe (2).png" 
+                 alt="An avatar of Duy Nguyen" 
+                 class="profile-avatar"
+                 width="150" 
+                 height="150">
+            <h2 class="red-txt greeting">Nice to meet you!</h2>
+            <h3 class="blue-txt section-title">Introduction</h3>
+            <p class="introduction-text">Welcome to Home of English. Home of English is a learning platform dedicated to supporting English learners in Vietnam. Our mission is to inspire and empower individuals on their journey to mastering the English language, whether for academic, professional, or personal growth.
+                Here, you'll find a wealth of resources, practical guidance, and insights into English learning and usage. We aim to create a community where learners can explore, improve, and confidently apply their skills in real-life contexts.              
+                Join Home of English today and take a meaningful step toward achieving your language goals!Home of English is a learning platform dedicated to supporting English learners in Vietnam. Our mission is to inspire and empower individuals on their journey to mastering the English language, whether for academic, professional, or personal growth.
+                Here, you'll find a wealth of resources, practical guidance, and insights into English learning and usage. We aim to create a community where learners can explore, improve, and confidently apply their skills in real-life contexts.              
+                Join Home of English today and take a meaningful step toward achieving your language goals!</p>
+            <p>Please visit <a href="https://www.facebook.com/duynguyen2797/" class="social-link">Facebook</a> for more information!</p>
+        </article>   
+           
+    </main>    
+ 
+</body>
+</html>
