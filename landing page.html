@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The K's - Where English and IT Intersect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font for general UI -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Hacker-style font for the slogan -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Set a default dark background */
+        }
+        .hero-bg {
+            background-color: #1a202c;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        #header {
+            transition: top 0.3s ease-in-out;
+        }
+        /* Styles for the hacker slogan effect */
+        .hacker-font {
+            font-family: 'VT323', monospace;
+            color: #4ade80; /* Bright green color like a terminal */
+        }
+        /* Blinking cursor effect */
+        .typing-cursor {
+            display: inline-block;
+            width: 1ch;
+            background-color: #4ade80;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { background-color: transparent }
+            50% { background-color: #4ade80; }
+        }
+        
+        /* Style for the fade-in effect */
+        #slogan-container {
+            opacity: 0;
+            transition: opacity 1.5s ease-in;
+        }
+
+        /* CSS filter to invert logo color for dark theme */
+        .logo-dark-theme {
+            filter: invert(1);
+        }
+    </style>
+</head>
+<body class="bg-[#1a202c] text-gray-300">
+
+    <!-- Header -->
+    <header id="header" class="bg-[#1a202c]/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md shadow-black/20">
+        <div class="container mx-auto px-6 py-2">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <!-- Added class to invert logo color -->
+                    <img src="https://i.postimg.cc/zfR3bqtk/logo-rbg-removebg-preview.png" alt="The K's Logo" class="h-20 w-auto logo-dark-theme">
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-300 hover:text-white transition duration-300">English</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition duration-300">Techlish</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition duration-300">MMO</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white transition duration-300">About</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-lg">
+            <a href="#" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">English</a>
+            <a href="#" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">Techlish</a>
+            <a href="#" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">MMO</a>
+            <a href="about.html" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">About</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-bg text-white min-h-screen flex items-center justify-center">
+            <div class="container mx-auto px-6 text-center">
+                <h1 id="slogan-container" class="hacker-font text-4xl md:text-6xl font-extrabold leading-snug mb-4">
+                    <span id="slogan-line1"></span><br>
+                    <span id="slogan-line2"></span><span id="loading-dots"></span><span class="typing-cursor"></span>
+                </h1>
+            </div>
+        </section>
+
+        <!-- NOTE: We will add new sections here -->
+
+    </main>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        
+        // Slogan Typing and Loading Effect
+        document.addEventListener('DOMContentLoaded', () => {
+            const sloganContainer = document.getElementById('slogan-container');
+            setTimeout(() => { sloganContainer.style.opacity = 1; }, 100);
+
+            const line1Text = "Grammar Bugs detected!";
+            const line2Text = "Fixing";
+            const line1Element = document.getElementById('slogan-line1');
+            const line2Element = document.getElementById('slogan-line2');
+            const loadingDotsElement = document.getElementById('loading-dots');
+            
+            let i = 0, j = 0;
+            function typeLine1() {
+                if (i < line1Text.length) {
+                    line1Element.textContent += line1Text.charAt(i++);
+                    setTimeout(typeLine1, 120);
+                } else {
+                    setTimeout(typeLine2, 500);
+                }
+            }
+            function animateDots() {
+                const dots = ["", ".", "..", "..."];
+                let dotIndex = 0;
+                setInterval(() => {
+                    loadingDotsElement.textContent = dots[dotIndex++ % dots.length];
+                }, 400);
+            }
+            function typeLine2() {
+                if (j < line2Text.length) {
+                    line2Element.textContent += line2Text.charAt(j++);
+                    setTimeout(typeLine2, 120);
+                } else {
+                    animateDots();
+                }
+            }
+            typeLine1();
+        });
+
+        // Smart Header: Hide on scroll down, show on scroll up
+        let lastScrollTop = 0;
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+                // Scroll Down
+                header.style.top = '-100px'; 
+            } else {
+                // Scroll Up
+                header.style.top = '0';
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, false);
+    </script>
+
+</body>
+</html>
+

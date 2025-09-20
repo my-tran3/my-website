@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The K's - MMO Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .price-title {
+             font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .price-tag {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-weight: 900;
+        }
+        .notion-price, .single-price {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-weight: 900;
+            font-size: 5rem;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        .modal-content {
+            transition: transform 0.25s ease;
+        }
+        .slogan-font {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-weight: 800;
+        }
+        .btn-chatgpt {
+            background-color: #74aa9c;
+        }
+        .btn-chatgpt:hover {
+            background-color: #63998b;
+        }
+        .btn-beautifulai {
+            background-color: #002633;
+        }
+        .btn-beautifulai:hover {
+            background-color: #001f29;
+        }
+    </style>
+</head>
+<body class="bg-[#1a202c]">
+    <!-- Header -->
+    <header id="header" class="bg-[#1a202c]/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md shadow-black/20">
+        <div class="container mx-auto px-6 py-2">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <img src="https://i.postimg.cc/zfR3bqtk/logo-rbg-removebg-preview.png" alt="The K's Logo" class="h-20 w-auto" style="filter: invert(1);">
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-300 hover:text-white transition duration-300">English</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition duration-300">Techlish</a>
+                    <a href="mmo.html" class="text-white font-bold transition duration-300">MMO</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white transition duration-300">About</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-lg">
+            <a href="#" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">English</a>
+            <a href="#" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">Techlish</a>
+            <a href="mmo.html" class="block py-3 px-6 text-sm text-white bg-gray-800">MMO</a>
+            <a href="about.html" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">About</a>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <!-- MMO Section -->
+        <section id="mmo" class="py-16 text-white">
+            <div class="max-w-6xl mx-auto px-6">
+                 <!-- Slogan -->
+                <div class="text-center mb-16">
+                    <h2 class="slogan-font text-3xl md:text-5xl tracking-tighter">
+                        <span class="text-gray-400">killer</span>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-red-500 to-rose-500">DEALS</span>
+                        <span class="text-gray-400">-</span>
+                        <span class="text-gray-400">zero</span>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">CHILLS</span>
+                    </h2>
+                </div>
+                
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 md:gap-6">
+                    <!-- Card Item: ChatGPT -->
+                    <div class="bg-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-700/80 transition transform hover:scale-105 duration-300" 
+                         onclick="showModal('chatgpt')">
+                        <img src="https://i.postimg.cc/xd11g0Mp/ChatGPT.png" alt="ChatGPT" class="h-16 w-auto object-contain">
+                        <p class="text-xs text-gray-400 mt-2">ChatGPT</p>
+                    </div>
+                    <!-- Card Item: GG1 2TB -->
+                    <div class="bg-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-700/80 transition transform hover:scale-105 duration-300" 
+                         onclick="showModal('gg1')">
+                        <img src="https://i.postimg.cc/PrdNVsGD/2-TB-1-year-GG1.png" alt="GG1 2TB" class="h-16 w-auto object-contain">
+                        <p class="text-xs text-gray-400 mt-2 text-center">GG1 2TB</p>
+                    </div>
+                    <!-- Card Item: Canva -->
+                    <div class="bg-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-700/80 transition transform hover:scale-105 duration-300" 
+                         onclick="showModal('canva')">
+                        <img src="https://i.postimg.cc/YSdwSY4b/Canva.png" alt="Canva" class="h-16 w-auto object-contain">
+                        <p class="text-xs text-gray-400 mt-2">Canva</p>
+                    </div>
+                    <!-- Card Item: Perplexity AI -->
+                    <div class="bg-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-700/80 transition transform hover:scale-105 duration-300" 
+                         onclick="showModal('perplexity')">
+                        <img src="https://i.postimg.cc/sDfHjxdg/Perplexity-AI-1.png" alt="Perplexity AI" class="h-16 w-16 rounded-full object-cover">
+                         <p class="text-xs text-gray-400 mt-2 text-center">Perplexity AI</p>
+                    </div>
+                    <!-- Card Item: M365 x OneDrive -->
+                    <div class="bg-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-700/80 transition transform hover:scale-105 duration-300" 
+                         onclick="showModal('m365')">
+                        <img src="https://i.postimg.cc/T1wFDksp/M365-x-One-Drive.png" alt="Office 365" class="h-16 w-auto object-contain">
+                        <p class="text-xs text-gray-400 mt-2 text-center">M365 x OneDrive</p>
+                    </div>
+                    <!-- Card Item: Zoom -->
+                    <div class="bg-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-700/80 transition transform hover:scale-105 duration-300" 
+                         onclick="showModal('zoom')">
+                        <img src="https://i.postimg.cc/qRZ01y4z/Zoom.png" alt="Zoom" class="h-16 w-auto object-contain">
+                        <p class="text-xs text-gray-400 mt-2">Zoom</p>
+                    </div>
+                    <!-- Card Item: Spotify -->
+                    <div class="bg-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-700/80 transition transform hover:scale-105 duration-300" 
+                         onclick="showModal('spotify')">
+                        <img src="https://i.postimg.cc/V6c43LW1/Spotify.png" alt="Spotify" class="h-16 w-16 rounded-full object-cover">
+                        <p class="text-xs text-gray-400 mt-2">Spotify</p>
+                    </div>
+                    <!-- Card Item: YouTube -->
+                    <div class="bg-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-700/80 transition transform hover:scale-105 duration-300" 
+                         onclick="showModal('youtube')">
+                        <img src="https://i.postimg.cc/sXDGBkV7/YouTube.webp" alt="YouTube" class="h-16 w-auto object-contain">
+                        <p class="text-xs text-gray-400 mt-2">YouTube</p>
+                    </div>
+                    <!-- Card Item: Notion -->
+                    <div class="bg-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-700/80 transition transform hover:scale-105 duration-300" 
+                         onclick="showModal('notion')">
+                        <img src="https://i.postimg.cc/VLw1Dfc9/Notion.png" alt="Notion" class="h-16 w-16 object-contain">
+                        <p class="text-xs text-gray-400 mt-2">Notion</p>
+                    </div>
+                    <!-- Card Item: beautiful.ai -->
+                    <div class="bg-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-700/80 transition transform hover:scale-105 duration-300" 
+                         onclick="showModal('beautifulai')">
+                        <img src="https://i.postimg.cc/63H1sxjQ/beautiful-ai.png" alt="beautiful.ai" class="h-16 w-16 rounded-full object-cover">
+                        <p class="text-xs text-gray-400 mt-2">beautiful.ai</p>
+                    </div>
+                    <!-- Card Item: Gamma App -->
+                    <div class="bg-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-700/80 transition transform hover:scale-105 duration-300" 
+                         onclick="showModal('gamma')">
+                        <img src="https://i.postimg.cc/wMC2Hqh9/Gamma.png" alt="Gamma App" class="h-16 w-16 rounded-full object-cover">
+                        <p class="text-xs text-gray-400 mt-2">Gamma</p>
+                    </div>
+                    <!-- Card Item: GG 1 Storage -->
+                    <div class="bg-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-700/80 transition transform hover:scale-105 duration-300" 
+                         onclick="showModal('ggstorage')">
+                        <img src="https://i.postimg.cc/65xbDczn/Google-storage.png" alt="Google One" class="h-16 w-16 rounded-full object-cover">
+                        <p class="text-xs text-gray-400 mt-2 text-center">GG 1 Storage</p>
+                    </div>
+                    <!-- Card Item: Claude -->
+                    <div class="bg-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-700/80 transition transform hover:scale-105 duration-300" 
+                         onclick="showModal('claude')">
+                        <img src="https://i.postimg.cc/rpkSpt60/Claude.webp" alt="Claude" class="h-16 w-auto object-contain">
+                        <p class="text-xs text-gray-400 mt-2">Claude</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Modal -->
+    <div id="product-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 invisible opacity-0" onclick="closeModal()">
+        <div id="modal-content-box" class="modal-content w-full max-w-md bg-slate-800/90 backdrop-blur-md rounded-2xl text-center p-8 relative transform scale-95" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div id="product-details-view">
+                <!-- All product details will be injected here by JS -->
+            </div>
+
+            <!-- Contact Options View (Shared & initially hidden) -->
+            <div id="contact-options-view" class="hidden">
+                 <h3 class="text-2xl font-bold text-white mb-6">Contact via</h3>
+                 <div class="flex items-center justify-center space-x-6">
+                    <a href="https://zalo.me/0902604061" target="_blank" rel="noopener noreferrer" class="transition transform hover:scale-110">
+                        <img src="https://i.postimg.cc/VvDMwVNL/Zalo.png" alt="Zalo" class="h-20 w-20">
+                    </a>
+                    <a href="https://m.me/duynguyen2797" target="_blank" rel="noopener noreferrer" class="transition transform hover:scale-110">
+                        <img src="https://i.postimg.cc/QtDWT39d/messenger.png" alt="Messenger" class="h-20 w-20">
+                    </a>
+                 </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const modal = document.getElementById('product-modal');
+        const modalContentBox = document.getElementById('modal-content-box');
+        const productDetailsView = document.getElementById('product-details-view');
+        const contactOptionsView = document.getElementById('contact-options-view');
+
+        const productTemplates = {
+            chatgpt: `
+                <img src="https://i.postimg.cc/xd11g0Mp/ChatGPT.png" alt="ChatGPT Logo" class="h-16 mx-auto mb-4 object-contain">
+                <div class="grid grid-cols-2 gap-x-4 mb-8">
+                    <div>
+                        <div class="mb-2">
+                             <h3 class="price-title text-5xl font-extrabold text-pink-500 leading-none">Plus</h3>
+                             <p class="text-lg text-gray-300">1 month</p>
+                        </div>
+                        <p class="price-tag text-4xl text-white">350k</p>
+                    </div>
+                    <div>
+                        <div class="mb-2">
+                            <h3 class="price-title text-5xl font-extrabold text-amber-400 leading-none">Team</h3>
+                            <p class="text-lg text-gray-300">1 month</p>
+                        </div>
+                        <p class="price-tag text-4xl text-white">70k</p>
+                    </div>
+                </div>
+                <div class="border-t border-slate-600 pt-6">
+                    <h4 class="text-xl font-bold text-sky-400">🎓 Teachers & Students</h4>
+                     <p class="text-md text-gray-300 mb-2">1 month</p>
+                    <div class="grid grid-cols-2 gap-x-4">
+                        <div><p class="price-tag text-2xl text-white">330k</p></div>
+                        <div><p class="price-tag text-2xl text-white">50k</p></div>
+                    </div>
+                </div>
+                <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 btn-chatgpt text-white font-semibold rounded-lg transition duration-300">GET GO!</button></div>
+            `,
+            notion: `
+                <img src="https://i.postimg.cc/VLw1Dfc9/Notion.png" alt="Notion Logo" class="h-16 mx-auto mb-4 object-contain">
+                <div class="mb-2">
+                    <h3 class="price-title text-4xl leading-none">
+                        <span class="text-gray-300">Edu</span>
+                        <span class="font-bold text-white">PLUS</span>
+                    </h3>
+                    <p class="text-lg text-gray-300">1 year</p>
+                </div>
+                <p class="notion-price text-white my-4">50k</p>
+                <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 bg-gray-200 text-black font-semibold rounded-lg hover:bg-white transition duration-300">GET GO!</button></div>
+            `,
+            gg1: `
+                <img src="https://i.postimg.cc/PrdNVsGD/2-TB-1-year-GG1.png" alt="GG1 Logo" class="h-16 mx-auto mb-4 object-contain">
+                <div class="mb-8">
+                    <div class="mb-2">
+                        <h3 class="price-title text-5xl font-extrabold text-blue-400 leading-none">Pro</h3>
+                        <p class="text-lg text-gray-300">1 year</p>
+                    </div>
+                    <p class="price-tag text-4xl text-white">300k</p>
+                </div>
+                <div class="border-t border-slate-600 pt-6">
+                    <h4 class="text-xl font-bold text-sky-400">🎓 Teachers & Students</h4>
+                    <p class="text-md text-gray-300 mb-2">1 year</p>
+                    <p class="price-tag text-2xl text-white">250k</p>
+                </div>
+                <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 bg-gradient-to-r from-[#FF3E9D] to-[#0E1F40] text-white font-semibold rounded-lg hover:brightness-110 transition duration-300">GET GO!</button></div>
+            `,
+            canva: `
+                <img src="https://i.postimg.cc/YSdwSY4b/Canva.png" alt="Canva Logo" class="h-20 mx-auto mb-4 object-contain">
+                <div class="grid grid-cols-2 gap-x-4 mb-8">
+                     <div>
+                        <div class="mb-2">
+                             <h3 class="price-title text-5xl font-extrabold text-cyan-500 leading-none">Edu</h3>
+                             <p class="text-lg text-gray-300">1 year</p>
+                        </div>
+                        <p class="price-tag text-4xl text-white">60k</p>
+                    </div>
+                    <div>
+                        <div class="mb-2">
+                            <h3 class="price-title text-5xl font-extrabold text-purple-500 leading-none">Pro</h3>
+                            <p class="text-lg text-gray-300">1 year</p>
+                        </div>
+                        <p class="price-tag text-4xl text-white">100k</p>
+                    </div>
+                </div>
+                <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold rounded-lg transition duration-300">GET GO!</button></div>
+            `,
+            perplexity: `
+                <img src="https://i.postimg.cc/sDfHjxdg/Perplexity-AI-1.png" alt="Perplexity AI Logo" class="h-20 mx-auto mb-4 object-contain">
+                <div class="mb-8">
+                    <div class="mb-2">
+                        <h3 class="price-title text-5xl font-extrabold text-teal-400 leading-none">Pro</h3>
+                        <p class="text-lg text-gray-300">1 year</p>
+                    </div>
+                    <p class="price-tag text-4xl text-white">120k</p>
+                </div>
+                <div class="border-t border-slate-600 pt-6">
+                    <h4 class="text-xl font-bold text-sky-400">🎓 Teachers & Students</h4>
+                    <p class="text-md text-gray-300 mb-2">1 year</p>
+                    <p class="price-tag text-2xl text-white">100k</p>
+                </div>
+                <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 bg-teal-500 text-white font-semibold rounded-lg hover:bg-teal-600 transition duration-300">GET GO!</button></div>
+            `,
+             m365: `
+                 <img src="https://i.postimg.cc/T1wFDksp/M365-x-One-Drive.png" alt="M365 Logo" class="h-20 mx-auto mb-4 object-contain">
+                <div class="grid grid-cols-2 gap-x-4 mb-8">
+                    <div>
+                        <div class="mb-2">
+                             <h3 class="price-title text-5xl font-extrabold text-cyan-500 leading-none">Family</h3>
+                             <p class="text-lg text-gray-300">1 year</p>
+                             <p class="text-sm text-gray-400">1TB OneDrive</p>
+                        </div>
+                        <p class="price-tag text-4xl text-white">150k</p>
+                    </div>
+                    <div>
+                        <div class="mb-2">
+                            <h3 class="price-title text-5xl font-extrabold text-purple-500 leading-none">E5</h3>
+                            <p class="text-lg text-gray-300">1 year</p>
+                            <p class="text-sm text-gray-400">5TB OneDrive</p>
+                        </div>
+                        <p class="price-tag text-4xl text-white">300k</p>
+                    </div>
+                </div>
+                <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-rose-500 hover:from-blue-600 hover:to-rose-600 text-white font-semibold rounded-lg transition duration-300">GET GO!</button></div>
+            `,
+            zoom: `
+                <img src="https://i.postimg.cc/qRZ01y4z/Zoom.png" alt="Zoom Logo" class="h-16 mx-auto mb-4 object-contain">
+                <div class="mb-8">
+                    <h3 class="price-title text-5xl font-extrabold text-center text-blue-400">Pro</h3>
+                </div>
+                <div class="grid grid-cols-2 gap-x-4 mb-8">
+                    <div>
+                        <div class="mb-2">
+                             <p class="text-lg text-gray-300">1 month</p>
+                        </div>
+                        <p class="price-tag text-4xl text-white">250k</p>
+                    </div>
+                    <div>
+                        <div class="mb-2">
+                            <p class="text-lg text-gray-300">1 year</p>
+                        </div>
+                        <p class="price-tag text-4xl text-white">1m8</p>
+                    </div>
+                </div>
+                <div class="border-t border-slate-600 pt-6">
+                    <h4 class="text-xl font-bold text-sky-400">🎓 Teachers & Students</h4>
+                    <div class="grid grid-cols-2 gap-x-4">
+                        <div>
+                            <p class="text-md text-gray-300 mb-2">1 month</p>
+                            <p class="price-tag text-2xl text-white">230k</p>
+                        </div>
+                        <div>
+                             <p class="text-md text-gray-300 mb-2">1 year</p>
+                            <p class="price-tag text-2xl text-white leading-none">1m6</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300">GET GO!</button></div>
+            `,
+            spotify: `
+                 <img src="https://i.postimg.cc/V6c43LW1/Spotify.png" alt="Spotify Logo" class="h-20 mx-auto mb-4 object-contain">
+                 <h3 class="price-title text-5xl font-extrabold text-green-400 leading-none mb-6">Premium</h3>
+                <div class="grid grid-cols-3 gap-4">
+                    <div>
+                        <p class="text-md text-gray-300 mb-1">1 month</p>
+                        <p class="price-tag text-3xl text-white">30k</p>
+                    </div>
+                    <div>
+                        <p class="text-md text-gray-300 mb-1">3 months</p>
+                        <p class="price-tag text-3xl text-white">100k</p>
+                    </div>
+                    <div>
+                         <p class="text-md text-gray-300 mb-1">6 months</p>
+                        <p class="price-tag text-3xl text-white">200k</p>
+                    </div>
+                </div>
+                 <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition duration-300">GET GO!</button></div>
+            `,
+            youtube: `
+                <img src="https://i.postimg.cc/sXDGBkV7/YouTube.webp" alt="YouTube Logo" class="h-20 mx-auto mb-4 object-contain">
+                <div class="mb-2">
+                     <h3 class="price-title text-5xl font-extrabold text-red-500 leading-none">Premium</h3>
+                </div>
+                <p class="text-md text-gray-300 mb-4">1 month</p>
+                <p class="single-price text-white my-4">50k</p>
+                <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition duration-300">GET GO!</button></div>
+            `,
+            beautifulai: `
+                <img src="https://i.postimg.cc/63H1sxjQ/beautiful-ai.png" alt="beautiful.ai Logo" class="h-20 mx-auto mb-4 object-contain">
+                <div class="mb-8">
+                     <div class="mb-2">
+                        <h3 class="price-title text-5xl font-extrabold text-indigo-400 leading-none">Edu Pro</h3>
+                        <p class="text-lg text-gray-300">1 year</p>
+                    </div>
+                    <p class="price-tag text-4xl text-white">90k</p>
+                </div>
+                <div class="border-t border-slate-600 pt-6">
+                    <h4 class="text-xl font-bold text-sky-400">🎓 Teachers & Students</h4>
+                    <p class="text-md text-gray-300 mb-2">1 year</p>
+                    <p class="price-tag text-2xl text-white">80k</p>
+                </div>
+                <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 btn-beautifulai text-white font-semibold rounded-lg transition duration-300">GET GO!</button></div>
+            `,
+            gamma: `
+                <img src="https://i.postimg.cc/wMC2Hqh9/Gamma.png" alt="Gamma App" class="h-20 mx-auto mb-4 object-contain">
+                 <div class="mb-8">
+                     <div class="mb-2">
+                        <h3 class="price-title text-5xl font-extrabold text-purple-400 leading-none">Pro</h3>
+                        <p class="text-lg text-gray-300">1 year</p>
+                    </div>
+                    <p class="price-tag text-4xl text-white">170k</p>
+                </div>
+                <div class="border-t border-slate-600 pt-6">
+                    <h4 class="text-xl font-bold text-sky-400">🎓 Teachers & Students</h4>
+                    <p class="text-md text-gray-300 mb-2">1 year</p>
+                    <p class="price-tag text-2xl text-white">160k</p>
+                </div>
+                <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-600 transition duration-300">GET GO!</button></div>
+            `,
+            claude: `
+                <img src="https://i.postimg.cc/rpkSpt60/Claude.webp" alt="Claude Logo" class="h-16 mx-auto mb-4 object-contain">
+                <div class="grid grid-cols-3 gap-x-2 mb-8">
+                    <div>
+                        <div class="mb-2">
+                            <h3 class="price-title text-2xl font-extrabold text-green-400 leading-none">PRO</h3>
+                            <p class="text-lg text-gray-300">1 month</p>
+                        </div>
+                        <p class="price-tag text-4xl text-white">380k</p>
+                    </div>
+                    <div>
+                        <div class="mb-2">
+                            <h3 class="price-title text-2xl font-extrabold text-red-400 leading-none">MAX x5</h3>
+                            <p class="text-lg text-gray-300">1 month</p>
+                        </div>
+                        <p class="price-tag text-4xl text-white">2m2</p>
+                    </div>
+                     <div>
+                        <div class="mb-2">
+                            <h3 class="price-title text-2xl font-extrabold text-red-500 leading-none">MAX x20</h3>
+                            <p class="text-lg text-gray-300">1 month</p>
+                        </div>
+                        <p class="price-tag text-4xl text-white">4m5</p>
+                    </div>
+                </div>
+                <div class="border-t border-slate-600 pt-6">
+                    <h4 class="text-xl font-bold text-sky-400">🎓 Teachers & Students</h4>
+                     <p class="text-md text-gray-300 mb-2">1 month</p>
+                    <div class="grid grid-cols-3 gap-x-2">
+                        <div><p class="price-tag text-3xl text-white">350k</p></div>
+                        <div><p class="price-tag text-3xl text-white">2m</p></div>
+                        <div><p class="price-tag text-3xl text-white">4m2</p></div>
+                    </div>
+                </div>
+                <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition duration-300">GET GO!</button></div>
+            `,
+            ggstorage: `
+                <img src="https://i.postimg.cc/65xbDczn/Google-storage.png" alt="GG 1 Storage Logo" class="h-20 mx-auto mb-6 object-contain">
+                <img src="https://i.postimg.cc/wTf4pXwF/Google-storage-edited.png" alt="Google Storage Details" class="w-full rounded-lg mb-8">
+                <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 via-red-500 via-yellow-400 to-green-500 text-white font-semibold rounded-lg hover:brightness-110 transition duration-300">GET GO!</button></div>
+            `,
+             default: `
+                <img data-role="img" src="" alt="Product Logo" class="h-20 mx-auto mb-4 object-contain">
+                <h2 data-role="title" class="text-3xl font-bold mb-4 text-white"></h2>
+                <p data-role="price" class="text-2xl text-green-400 font-semibold mb-8"></p>
+                <div class="mt-8"><button onclick="showContactOptions()" class="inline-block px-8 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition duration-300">GET GO!</button></div>
+            `
+        };
+
+        function showModal(contentId, defaultData = {}) {
+            // Set content
+            if (productTemplates[contentId]) {
+                productDetailsView.innerHTML = productTemplates[contentId];
+            } else {
+                productDetailsView.innerHTML = productTemplates.default;
+                productDetailsView.querySelector('[data-role="title"]').textContent = defaultData.title || '';
+                productDetailsView.querySelector('[data-role="img"]').src = defaultData.img || '';
+                productDetailsView.querySelector('[data-role="price"]').textContent = defaultData.price || '';
+            }
+
+            // Show details, hide contacts
+            productDetailsView.classList.remove('hidden');
+            contactOptionsView.classList.add('hidden');
+
+            // Adjust modal width for content
+            modalContentBox.classList.remove('max-w-md', 'max-w-lg', 'max-w-2xl'); // Reset widths
+            if (['spotify', 'claude'].includes(contentId)) {
+                modalContentBox.classList.add('max-w-lg');
+            } else if (['ggstorage', 'm365'].includes(contentId)) {
+                modalContentBox.classList.add('max-w-2xl');
+            }
+            else {
+                modalContentBox.classList.add('max-w-md');
+            }
+            
+            // Show modal
+            modal.classList.remove('invisible', 'opacity-0');
+            modal.querySelector('.modal-content').classList.remove('scale-95');
+        }
+
+        function showContactOptions() {
+            productDetailsView.classList.add('hidden');
+            contactOptionsView.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modal.querySelector('.modal-content').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('invisible');
+            }, 300); // Wait for transition to finish
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+    </script>
+</body>
+</html>
+
