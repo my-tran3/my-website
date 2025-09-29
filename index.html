@@ -12,6 +12,9 @@
     <!-- Hacker-style font for the slogan -->
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #1a202c; /* Set a default dark background */
@@ -54,22 +57,20 @@
     </style>
 </head>
 <body class="bg-[#1a202c] text-gray-300">
-    
-    Impact-Site-Verification: f9ffc0df-7634-41f6-9d8c-4c650d0fbd2c
 
     <!-- Header -->
     <header id="header" class="bg-[#1a202c]/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md shadow-black/20">
         <div class="container mx-auto px-6 py-2">
             <div class="flex items-center justify-between">
                 <a href="index.html">
-                    <!-- Added class to invert logo color -->
                     <img src="https://i.postimg.cc/zfR3bqtk/logo-rbg-removebg-preview.png" alt="The K's Logo" class="h-20 w-auto logo-dark-theme">
                 </a>
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-gray-300 hover:text-white transition duration-300">English</a>
-                    <a href="#" class="text-gray-300 hover:text-white transition duration-300">Techlish</a>
-                    <!-- Updated MMO link -->
+                    <!-- Updated links for English and Techlish -->
+                    <a href="english.html" class="text-gray-300 hover:text-white transition duration-300">English</a>
+                    <a href="techlish.html" class="text-gray-300 hover:text-white transition duration-300">Techlish</a>
                     <a href="mmo.html" class="text-gray-300 hover:text-white transition duration-300">MMO</a>
+                    <a href="deal.html" class="text-gray-300 hover:text-white transition duration-300">Deals</a>
                     <a href="about.html" class="text-gray-300 hover:text-white transition duration-300">About</a>
                 </nav>
                 <button id="mobile-menu-button" class="md:hidden">
@@ -79,15 +80,17 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-lg">
-            <a href="#" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">English</a>
-            <a href="#" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">Techlish</a>
-            <!-- Updated MMO link -->
+             <!-- Updated links for English and Techlish -->
+            <a href="english.html" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">English</a>
+            <a href="techlish.html" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">Techlish</a>
             <a href="mmo.html" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">MMO</a>
+            <a href="deal.html" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">Deals</a>
             <a href="about.html" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-800">About</a>
         </div>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="hero" class="hero-bg text-white min-h-screen flex items-center justify-center">
             <div class="container mx-auto px-6 text-center">
                 <h1 id="slogan-container" class="hacker-font text-4xl md:text-6xl font-extrabold leading-snug mb-4">
@@ -96,8 +99,8 @@
                 </h1>
             </div>
         </section>
-
-        <!-- NOTE: We will add new sections here -->
+        
+        <!-- Other sections will be added in their own chats -->
 
     </main>
 
@@ -159,9 +162,18 @@
             }
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         }, false);
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!link.href.endsWith('#')) { // Only close for actual page links, not anchor links on the same page
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
     </script>
 
 </body>
 </html>
-
 
